@@ -6,7 +6,7 @@ public class Main {
     public static void main(String[] args) {
 
         ObjetoSerial a = new ObjetoSerial();
-        String nameFile = System.getProperty("user.dir") + File.separator+"Tasca_5"+File.separator+"src"+File.separator+"n1exercici5"+File.separator+"Test.ser";
+        String nameFile = System.getProperty("user.dir") + File.separator+"Tasca_5"+File.separator+"src"+File.separator+"n1exercici5"+File.separator+"SerialObject.ser";
         System.out.println(nameFile);
 
         writeObject(a, nameFile);
@@ -17,17 +17,17 @@ public class Main {
 
     public static void writeObject(ObjetoSerial a, String name){
         try {
-            System.out.println(name);
             FileOutputStream fos = new FileOutputStream(name);
             ObjectOutputStream oos = new ObjectOutputStream(fos);
 
             // write object to file
-            oos.writeObject(name);
+            oos.writeObject(a);
             System.out.println("Done");
 
             // closing resources
             oos.close();
             fos.close();
+
         } catch (IOException e) {
             e.printStackTrace();
         }
@@ -35,7 +35,6 @@ public class Main {
 
     public static ObjetoSerial readObjectSer(String name){
         try{
-            System.out.println("EStamos aquí: " + name);
             FileInputStream is = new FileInputStream(name);
             ObjectInputStream ois = new ObjectInputStream(is);
             ObjetoSerial emp = (ObjetoSerial) ois.readObject();
