@@ -10,7 +10,5 @@ public class Main {
         treballador.calcularSou(150);
         treballadorP.calcularSou(150);
         treballadorO.calcularSou(150);
-
-
     }
 }
