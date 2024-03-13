@@ -52,7 +52,10 @@ public class Main {
     public static void guardarPuntuacio(String name, int punts){
 
         try{
-            FileWriter file = new FileWriter("src/n1exercici3/output/classificacio.txt", true);
+            String a = System.getProperty("user.dir");
+            String b = File.separator+"Tasca_3"+File.separator+"src"+File.separator+"n1exercici3"+File.separator+"classificacio.txt";
+
+            FileWriter file = new FileWriter(a+b, true);
 
             System.out.println(name + " té una puntuació de: " + punts);
             file.write(name + " té una puntuació de: " + punts + "\n");
@@ -68,7 +71,11 @@ public class Main {
         HashMap<String, String> aux = new HashMap<String, String>();
 
         try{
-            File file = new File("src/n1exercici3/resources/countries.txt");
+            String a = System.getProperty("user.dir");
+            String b = File.separator+"Tasca_3"+File.separator+"src"+File.separator+"n1exercici3"+File.separator+"countries.txt";
+
+            System.out.println(a+b);
+            File file = new File(a + b);
 
             Scanner scanner = new Scanner(file);
 
