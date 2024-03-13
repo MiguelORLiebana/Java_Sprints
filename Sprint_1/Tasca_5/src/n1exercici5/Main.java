@@ -6,7 +6,7 @@ public class Main {
     public static void main(String[] args) {
 
         ObjetoSerial a = new ObjetoSerial();
-        String nameFile = System.getProperty("user.dir") + File.separator+"Tasca_5"+File.separator+"src"+File.separator+"n1exercici5"+File.separator+"SerialObject.ser";
+        String nameFile = "TestObject.ser";
         System.out.println(nameFile);
 
         writeObject(a, nameFile);
