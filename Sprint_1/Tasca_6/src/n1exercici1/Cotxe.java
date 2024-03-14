@@ -12,4 +12,7 @@ public class Cotxe {
         this.model = model;
     }
 
+    public String getModel(){
+        return model;
+    }
 }

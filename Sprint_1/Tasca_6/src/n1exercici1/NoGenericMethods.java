@@ -2,7 +2,7 @@ package n1exercici1;
 
 public class NoGenericMethods {
 
-    private Cotxe[] cotxe;
+    private Cotxe[] cotxe = new Cotxe[3];
 
     public NoGenericMethods(String model1, String model2, String model3){
         this.cotxe[0] = new Cotxe(model1);
