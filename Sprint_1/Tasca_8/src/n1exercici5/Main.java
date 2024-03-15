@@ -3,25 +3,37 @@ package n1exercici5;
 public class Main {
     public static void main(String[] args) {
 
-        //Forma 1
-        FunctInterface obj = new FunctInterface() {
-            @Override
-            public double getValue() {
-                return 3.1415;
-            }
-        };
-
-        System.out.printf(String.valueOf(obj.getValue()));
-
-
-        //Forma 2
-        //https://www.geeksforgeeks.org/functional-interfaces-java/   - @FunctionalInterface Annotation
-
-//        FunctInterface obj1 = () -> 3.1;
+//        Solución 1 - Clase anónima
+//        FunctInterface obj = new FunctInterface() {
+//            @Override
+//            public double getValue() {
+//                return 3.1415;
+//            }
+//         };
 //
-//        System.out.printf(String.valueOf(obj1.getValue()));
+//        System.out.println(String.valueOf(obj.getValue()));
+
+
+//        Solución 2 - Clase anónima
+//        double a = new FunctInterface(){
+//            @Override
+//            public double getValue(){
+//                return 3.14;
+//            }
+//        }.getValue();
+//        System.out.printf(String.valueOf(a));
+
+
+//      Solución 3 - Lambda
+        FunctInterface obj1 = () -> 3.1415;
+
+        System.out.println(obj1.getValue());
+
     }
 }
+
+
+// Sólo puede contener un método -> https://www.youtube.com/watch?v=QrptTiBP5yk
 
 @FunctionalInterface
 interface FunctInterface {
