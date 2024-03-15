@@ -1,7 +1,6 @@
 package n1exercici6;
 
 import java.util.*;
-import java.util.stream.Collectors;
 
 public class Main {
     @SuppressWarnings("unchecked")
