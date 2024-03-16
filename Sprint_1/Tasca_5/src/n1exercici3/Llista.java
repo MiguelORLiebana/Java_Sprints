@@ -68,11 +68,9 @@ public class Llista {
         try{
 
             String dir = System.getProperty("user.dir");
+            String commandIo = File.separator+"Tasca_5"+File.separator+"src"+File.separator+"n1exercici3"+File.separator+"directoris.txt";
+            //System.out.println(dir+commandIo);
 
-            //String local = "/src/n1exercici3/output/directoris.txt";
-            //FileWriter fileG = new FileWriter(dir + local, true);
-
-            String commandIo = "/output/directoris.txt";
             FileWriter fileG = new FileWriter(dir + commandIo, true);
 
             fileG.write("Path: " + file.getAbsolutePath() +
