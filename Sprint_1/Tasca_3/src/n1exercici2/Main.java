@@ -19,10 +19,10 @@ public class Main {
 
         System.out.println("***** mostrar llista - listIterator *****");
         while(it.hasNext()){
-            System.out.println(it.next());
+            System.out.print(it.next() + ", ");
         }
 
-        System.out.println("****** llista Inversa *******");
+        System.out.println("\n****** llista Inversa *******");
         while(it.hasPrevious()){
             llistaInv.add(it.previous());
         }
@@ -36,8 +36,6 @@ public class Main {
     }
 
     public static void mostrarLlista(List<Integer> llista){
-        for(Integer i : llista){
-            System.out.println(i);
-        }
+        System.out.println(llista);
     }
 }
