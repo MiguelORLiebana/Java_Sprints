@@ -12,7 +12,7 @@ public class Main {
         try{
             directoris.llistarContingutDiretoriesAndFolders(args[0]);
         } catch(ArrayIndexOutOfBoundsException e){
-            e.getMessage();
+            System.out.printf(e.getMessage());
         }
     }
 }
