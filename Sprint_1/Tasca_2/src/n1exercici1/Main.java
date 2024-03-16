@@ -20,5 +20,19 @@ public class Main {
         } catch (VendaBuidaException e){
             System.out.println(e.getMessage());
         }
+
+
+        //Exception ArrayIndexOutOfBoundsException using Arrays
+
+        try{
+
+            int[] numbers = new int[] {1, 2};
+            int lastNumber = numbers[3];
+
+        } catch(ArrayIndexOutOfBoundsException e){
+
+            System.out.printf("El index excede del tamaño del array");
+
+        }
     }
 }
