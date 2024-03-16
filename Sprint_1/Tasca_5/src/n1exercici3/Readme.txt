@@ -7,5 +7,5 @@ COMMAND I/O:
    java Main "directory"     //Example of command -> java Main "/Users/mike/Desktop"
 
 EDITOR:
-1. Uncomment Main.java line 8   //String directory
+1. Uncomment Main.java line 9   //String directory
 2. Update Main.java line 13     //directoris.llistarContingutDiretoriesAndFolders(directory, true);

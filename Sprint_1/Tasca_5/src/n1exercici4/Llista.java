@@ -13,10 +13,8 @@ import java.util.Scanner;
 public class Llista {
 
     public void mostrarConsolaFitxer(String directory){
-        try{
 
-//            String dir = System.getProperty("user.dir");
-//            String commandIo = "/output/directoris.txt";
+        try{
 
             File file = new File(directory);
 
@@ -26,8 +24,9 @@ public class Llista {
                 String line = scanner.nextLine();
                 System.out.println(line);
             }
+
         } catch(IOException e){
-            System.out.println("No es pot accedir a l´arxiu .txt");
+            System.out.println("No es pot accedir a l´arxiu amb extensió .txt");
         } catch(ArrayIndexOutOfBoundsException e){
             System.out.println("Error amb l´array");
         }
