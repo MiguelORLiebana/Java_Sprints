@@ -8,4 +8,4 @@ COMMAND I/O:
 
 EDITOR:
 1. Uncomment Main.java line 8   //String directory
-2. Update Main.java line 13     //llista.llistarContingut(directory);
+2. Update Main.java line 13     //directoris.llistarContingutDiretoriesAndFolders(args[0]);
