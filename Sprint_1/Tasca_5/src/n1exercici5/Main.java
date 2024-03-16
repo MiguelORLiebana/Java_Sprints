@@ -22,7 +22,7 @@ public class Main {
 
             // write object to file
             oos.writeObject(a);
-            System.out.println("Done");
+            System.out.println("File TestObject.ser - Done");
 
             // closing resources
             oos.close();
