@@ -12,10 +12,13 @@ public class DniTest {
     static Integer[] dnis = {11859627,15461456,15485449,20096582,12453067,35575507,49592953,48157988,47472551,44736110};
 
     public static HashMap<Integer, String> omplirData(){
+
         HashMap<Integer, String> aux = new HashMap<Integer, String>();
+
         for(int i=0; i < letras.length; i++){
             aux.put(dnis[i], letras[i]);
         }
+
         return aux;
     }
     static HashMap<Integer, String> llista = omplirData();
@@ -23,7 +26,8 @@ public class DniTest {
     @ParameterizedTest
     @ValueSource(ints = {11859627,15461456,15485449,20096582,12453067,35575507,49592953,48157988,47472551,44736110})
     void calcularDniTest(Integer numero){
-        Dni dni = new Dni();
+
+        CalculoDni dni = new CalculoDni();
 
         Assertions.assertEquals(llista.get(numero), dni.calcularDni(numero));
     }
