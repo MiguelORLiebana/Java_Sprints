@@ -43,6 +43,7 @@ public class Main {
                     redaccio.introduirNoticiaRedactor();
                     break;
                 case 4:
+                    redaccio.eliminarNoticiaRedactor();
                     break;
                 case 5:
                     redaccio.mostrarNoticiesRedactor();

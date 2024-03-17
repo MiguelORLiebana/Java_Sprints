@@ -90,6 +90,16 @@ public class Redaccio {
         }
     }
 
+    public void eliminarNoticiaRedactor(){
+        String dni = demanarDni();
+        String titular = demanarTitular();
+
+        for(Redactor redactor:redactors){
+            if(redactor.existeixDni(dni) && redactor.existeixNoticia(titular))redactor.eliminarNoticia(titular);
+        }
+
+    }
+
      private String demanarTitular(){
         String titular;
         Scanner scanner = new Scanner(System.in);

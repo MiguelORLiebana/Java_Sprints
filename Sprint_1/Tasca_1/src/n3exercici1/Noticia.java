@@ -20,6 +20,10 @@ public class Noticia {
         System.out.println("El titular de la noticia es: " + this.titular);
     }
 
+    public String getTitular(){
+        return this.titular;
+    }
+
     public boolean isTenis(){
         if(tipusNoticia == Noticias.tenis){
             return true;

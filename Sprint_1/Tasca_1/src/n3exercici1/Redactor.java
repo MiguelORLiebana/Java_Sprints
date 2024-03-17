@@ -53,8 +53,29 @@ public class Redactor {
         }
     }
 
-    public List<Noticia> getNoticias(){
-        return this.noticias;
+    public boolean existeixNoticia(String titular){
+        String titularEx;
+
+        if(noticias.isEmpty()){
+            return false;
+        } else{
+            for(Noticia noticia: noticias){
+                titularEx = noticia.getTitular();
+
+                if(titularEx.equals(titular)) return true;
+
+            }
+            return false;
+        }
+    }
+
+    public void eliminarNoticia(String titular){
+        String aux;
+        for(Noticia noticia: noticias){
+            if(noticia.getTitular().equals(titular)){
+                noticias.remove(noticia);
+            }
+        }
     }
 
     public void afegirNoticia(Noticia noticia){
