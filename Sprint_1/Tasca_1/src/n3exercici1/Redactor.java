@@ -63,10 +63,18 @@ public class Redactor {
                 titularEx = noticia.getTitular();
 
                 if(titularEx.equals(titular)) return true;
-
             }
             return false;
         }
+    }
+
+    public Noticia getNoticia(String titular){
+
+        return noticias
+                .stream()
+                .filter(a -> a.getTitular().equals(titular))
+                .findFirst()
+                .get();
     }
 
     public void eliminarNoticia(String titular){

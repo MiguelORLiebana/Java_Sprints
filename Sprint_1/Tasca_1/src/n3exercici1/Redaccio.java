@@ -6,11 +6,9 @@ import java.util.Scanner;
 
 public class Redaccio {
     private List<Redactor> redactors = new ArrayList<>();
-    private String auxDni;
-    private String dni;
     private String nom;
 
-    //*********** GESTIÓ DE REDACTORS - CREACIÓ I ELEMINACIÓ *********
+    //*********** GESTIÓ DE REDACTORS - CREACIÓ I ELIMINACIÓ *********
 
     private void introdueixRedactor(Redactor redactor){
         redactors.add(redactor);
@@ -45,7 +43,7 @@ public class Redaccio {
     }
 
     public void deleteRedactor(){
-        auxDni = demanarDni();
+        String auxDni = demanarDni();
         int aux;
 
         for(Redactor r:redactors){
@@ -97,7 +95,6 @@ public class Redaccio {
         for(Redactor redactor:redactors){
             if(redactor.existeixDni(dni) && redactor.existeixNoticia(titular))redactor.eliminarNoticia(titular);
         }
-
     }
 
      private String demanarTitular(){
@@ -118,10 +115,32 @@ public class Redaccio {
         }
     }
 
-    private void incrementSouRedactors(int increment){
-        for(Redactor p:redactors){
-            p.incrementSou(increment);
-        }
+
+    //*********** GESTIÓ DE NOTICIES - VALOR I PUNTUACIO DE NOTICIES *********
+    public void calcularPuntuacioNoticia(){
+        String dni = demanarDni();
+        String titular = demanarTitular();
+        Noticia noticia;
+
+        if(!redactors.isEmpty()) {
+            Redactor redactor = getRedactor(dni);
+            noticia = redactor.getNoticia(titular);
+            noticia.getPunts();
+        }else System.out.println("Error - No hay redactors!");
     }
+
+    private Redactor getRedactor(String dni){
+        return redactors
+                .stream()
+                .filter(a -> a.getDni().equals(dni))
+                .findFirst()
+                .get();
+    }
+
+//    private void incrementSouRedactors(int increment){
+//        for(Redactor p:redactors){
+//            p.incrementSou(increment);
+//        }
+//    }
 }
 

@@ -24,6 +24,10 @@ public class Noticia {
         return this.titular;
     }
 
+    public void getPunts(){
+        //TODO
+    }
+
     public boolean isTenis(){
         if(tipusNoticia == Noticias.tenis){
             return true;

@@ -49,6 +49,7 @@ public class Main {
                     redaccio.mostrarNoticiesRedactor();
                     break;
                 case 6:
+                    redaccio.calcularPuntuacioNoticia();
                     break;
                 case 7:
                     break;
