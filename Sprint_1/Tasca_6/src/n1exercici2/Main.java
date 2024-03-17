@@ -11,6 +11,7 @@ public class Main
 
         a.generic(palabra, persona, primitiu);
 
+        System.out.println("\n****************** canvi d´ordre **********************\n");
         a.generic(primitiu, palabra, persona);
     }
 }
