@@ -78,7 +78,6 @@ public class Redaccio {
         String titular = demanarTitular();
 
         Noticia noticia = new Noticia(titular);
-
         afegirNoticiaRedactor(dni, noticia);
     }
 
@@ -125,7 +124,7 @@ public class Redaccio {
         if(!redactors.isEmpty()) {
             Redactor redactor = getRedactor(dni);
             noticia = redactor.getNoticia(titular);
-            noticia.getPunts();
+            noticia.getPunts(titular);
         }else System.out.println("Error - No hay redactors!");
     }
 
