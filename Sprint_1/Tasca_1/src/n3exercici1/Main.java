@@ -39,6 +39,7 @@ public class Main {
                     redaccio.deleteRedactor();
                     break;
                 case 3:
+                    redaccio.mostrarRedactors();
                     break;
                 case 4:
                     break;

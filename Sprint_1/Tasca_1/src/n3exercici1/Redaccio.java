@@ -1,10 +1,11 @@
 package n3exercici1;
 
+import java.util.ArrayList;
 import java.util.List;
 import java.util.Scanner;
 
 public class Redaccio {
-    private List<Redactor> redactors;
+    private List<Redactor> redactors = new ArrayList<>();
     private String auxDni;
     private String dni;
     private String nom;
@@ -22,9 +23,9 @@ public class Redaccio {
     public void creaRedactor(){
 
         Scanner scanner = new Scanner(System.in);
-        System.out.println("Nom del redactor");
+        System.out.println("Nom del redactor/a");
         nom = scanner.nextLine();
-        System.out.println("DNI del redactor");
+        System.out.println("DNI del redactor/a");
         dni = scanner.nextLine();
 
         Redactor redactorAux = new Redactor(dni, nom);
@@ -41,6 +42,13 @@ public class Redaccio {
         }
     }
 
+    public void mostrarRedactors(){
+        for(Redactor a: redactors){
+            System.out.println("Redactor/a amb nom: " + a.getName() +
+                    ", i Dni: " + a.getDni());
+        }
+    }
+
     public void mostrarNoticiasRedactor(){
         for(Redactor p:redactors){
             p.getDni();
@@ -51,8 +59,9 @@ public class Redaccio {
     public String demanarDni(){
         String aux;
         Scanner scanner = new Scanner(System.in);
-        System.out.println("Introdueix el dni del redactor");
-        return aux = scanner.nextLine();
+        System.out.println("Introdueix el dni del redactor/a");
+        aux = scanner.nextLine();
+        return aux;
     }
 }
 

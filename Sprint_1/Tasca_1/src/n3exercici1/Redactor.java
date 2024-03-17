@@ -28,10 +28,13 @@ public class Redactor {
         }else return false;
     }
 
-    public void getDni(){
-        System.out.println("Redactor amb dni: " + dni);
+    public String getDni(){
+        return this.dni;
     }
 
+    public String getName() {
+        return this.nom;
+    }
     public void mostrarNoticies(){
         for(Noticia n:noticias){
             n.mostrarTitular();
