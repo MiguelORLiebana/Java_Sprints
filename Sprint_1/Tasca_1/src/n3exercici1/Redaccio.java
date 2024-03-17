@@ -77,8 +77,8 @@ public class Redaccio {
 
     public void introduirNoticiaRedactor(){
         String dni = demanarDni();
-
         String titular = demanarTitular();
+
         Noticia noticia = new Noticia(titular);
 
         afegirNoticiaRedactor(dni, noticia);
@@ -86,7 +86,7 @@ public class Redaccio {
 
     private void afegirNoticiaRedactor(String dni, Noticia noticia){
         for(Redactor redactor:redactors){
-            if(redactor.existeixDni(auxDni))redactor.afegirNoticia(noticia);
+            if(redactor.existeixDni(dni))redactor.afegirNoticia(noticia);
         }
     }
 
