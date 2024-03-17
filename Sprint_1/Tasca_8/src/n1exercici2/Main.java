@@ -14,6 +14,7 @@ public class Main {
         llista.add("nieve");
         llista.add("pon");
         llista.add("faraon");
+        llista.add("carroceria");
 
         List<String> llistaFinal;
 
@@ -36,5 +37,6 @@ public class Main {
     public static void mostrarLlista(List<String> llista){
 
         llista.forEach(System.out::println);
+        //System.out.printf(llista.toString());
     }
 }
