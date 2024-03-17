@@ -1,12 +1,13 @@
 package n3exercici1;
 
+import java.util.ArrayList;
 import java.util.List;
 
 public class Redactor {
     private final String dni;
     private String nom;
     private int sou;
-    private List<Noticia> noticias;
+    private List<Noticia> noticias = new ArrayList<>();
     private int id;
     private static int IdNext = 1;
 
@@ -22,7 +23,7 @@ public class Redactor {
         this.sou += increment;
     }
 
-    public boolean esDni(String dni){
+    public boolean existeixDni(String dni){
         if(this.dni.equals(dni)) {
             return true;
         }else return false;
@@ -35,10 +36,29 @@ public class Redactor {
     public String getName() {
         return this.nom;
     }
+
+    public Integer getNumNoticies(){
+        if(noticias.isEmpty()) return 0;
+        else return noticias.size();
+    }
+
     public void mostrarNoticies(){
-        for(Noticia n:noticias){
-            n.mostrarTitular();
+        if(noticias.isEmpty()){
+            System.out.println("No hay noticias!!!");
         }
+        else{
+            for(Noticia n:noticias){
+                n.mostrarTitular();
+            }
+        }
+    }
+
+    public List<Noticia> getNoticias(){
+        return this.noticias;
+    }
+
+    public void afegirNoticia(Noticia noticia){
+        noticias.add(noticia);
     }
 }
 

@@ -11,15 +11,13 @@ public class Noticia {
     private int preu;
     private Noticias tipusNoticia;
 
-    public Noticia(String titular, int puntuacio, int preu){
+    public Noticia(String titular){
         this.titular = titular;
         this.text = "";
-        this.puntuacio = puntuacio;
-        this.preu = preu;
     }
 
     public void mostrarTitular(){
-        System.out.println(this.titular);
+        System.out.println("El titular de la noticia es: " + this.titular);
     }
 
     public boolean isTenis(){

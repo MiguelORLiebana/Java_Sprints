@@ -24,6 +24,7 @@ public class Main {
         System.out.println("5.- Mostrar totes les notícies per redactor.");
         System.out.println("6.- Calcular puntuació de la notícia.");
         System.out.println("7.- Calcular preu-notícia");
+        System.out.println("8. - Mostrar llista de redactors.");
 
         try {
             Scanner scanner = new Scanner(System.in);
@@ -39,13 +40,19 @@ public class Main {
                     redaccio.deleteRedactor();
                     break;
                 case 3:
-                    redaccio.mostrarRedactors();
+                    redaccio.introduirNoticiaRedactor();
                     break;
                 case 4:
                     break;
                 case 5:
+                    redaccio.mostrarNoticiesRedactor();
                     break;
                 case 6:
+                    break;
+                case 7:
+                    break;
+                case 8:
+                    redaccio.mostrarRedactors();
                     break;
                 default:
                     System.out.println("******************************************");
