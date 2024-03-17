@@ -4,16 +4,18 @@ public class Main {
     public static void main(String[] args) {
 
         String name = "hola";
-
+        String nameReverse = "aloh";
 
         IReverse reverseF = (a) -> {
-            StringBuffer str = new StringBuffer(a);
+            StringBuilder str = new StringBuilder(a);
             str.reverse();
+
             return str.toString();
         };
 
-        System.out.printf(reverseF.reverse(name));
+        System.out.println(reverseF.reverse(name));
 
+        if(nameReverse.equals(reverseF.reverse(name))) System.out.println("It´s Ok!!");
     }
 }
 
