@@ -13,6 +13,8 @@ public class Main {
         treballadorP.calcularSou(150);
         treballadorO.calcularSou(150);
 
+        System.out.println("********** Method Deprecated ***************");
+
         treballadorP.saludar();
         treballadorO.deprecatedMethod();
     }

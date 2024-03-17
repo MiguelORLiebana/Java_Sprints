@@ -20,11 +20,11 @@ public class TreballadorOnline extends Treballador {
     @Override
     public void calcularSou(Integer hores){
         Integer sou = preuHora * hores + tarifaInternet;
-        System.out.println("Soy del Treballador Online: " + sou);
+        System.out.println("Sou del Treballador Online: " + sou);
     }
 
     @Deprecated (since = "1.0", forRemoval = true)
     public void deprecatedMethod(){
-        System.out.println("Método deprecado");
+        System.out.println("Deprecated method since version 1.0 TreballadorOnline");
     }
 }

@@ -20,11 +20,11 @@ public class TreballadorPresencial extends Treballador {
     @Override
     public void calcularSou(Integer hores){
         Integer sou = hores * preuHora + benzina;
-        System.out.println("Soy del Treballador Presencial: " + sou);
+        System.out.println("Sou del Treballador Presencial: " + sou);
     }
 
     @Deprecated(since = "2.0", forRemoval = true)
     public void saludar(){
-        System.out.println("Saludossss");
+        System.out.println("Deprecated method since version 2.0 TreballadorPresencial");
     }
 }
