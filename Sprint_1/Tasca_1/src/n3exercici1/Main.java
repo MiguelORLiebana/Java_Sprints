@@ -9,7 +9,7 @@ public class Main {
         int aux = 10;
 
         while (aux != 0) {
-            System.out.println("**************** MENU ********************");
+            System.out.println("\n**************** MENU ********************");
             aux = selection(redaccio);
             System.out.println("******************************************");
         }

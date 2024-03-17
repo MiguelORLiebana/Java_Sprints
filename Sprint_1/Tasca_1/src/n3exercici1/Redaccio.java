@@ -34,10 +34,13 @@ public class Redaccio {
 
     public void deleteRedactor(){
         auxDni = demanarDni();
+        int aux;
 
         for(Redactor r:redactors){
             if(r.esDni(auxDni)){
-                r = null;
+                //r = null;
+                aux = redactors.indexOf(r);
+                redactors.remove(aux);
             }
         }
     }
