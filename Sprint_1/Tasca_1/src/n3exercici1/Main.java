@@ -52,6 +52,7 @@ public class Main {
                     redaccio.calcularPuntuacioNoticia();
                     break;
                 case 7:
+                    redaccio.calcularPreuNoticia();
                     break;
                 case 8:
                     redaccio.mostrarRedactors();

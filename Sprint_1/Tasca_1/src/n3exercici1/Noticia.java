@@ -24,30 +24,45 @@ public class Noticia {
         return this.titular;
     }
 
-    public void getPunts(String titular){
-        Esports esport = getEsport(titular);
+    public Integer getPunts(String titular){
+        calculPuntsIPreu(titular);
+        return this.puntuacio;
+    }
+
+    public Integer getPreu(String titular){
+        calculPuntsIPreu(titular);
+        return this.preu;
+    }
+
+    public void calculPuntsIPreu(String titular){
         this.puntuacio = 0;
+        this.preu = 0;
+        this.esport = getEsport(titular);
 
         if(isFutbol()){
-            puntuacio += 5;
+            this.puntuacio += 5;
+            this.preu += 300;
             isCampions(titular);
             isLliga(titular);
-            isBarçaMadrid(titular);
+            isBarçaMadrid(titular, Esports.futbol);
             isTorresBenzema(titular);
         } else if(isTenis()){
-            puntuacio += 4;
+            this.puntuacio += 4;
+            this.preu += 150;
             isTenistas(titular);
         } else if(isF1()){
-            puntuacio += 3;
+            this.puntuacio += 3;
+            this.preu += 100;
             isEscuderiaF1(titular);
         } else if(isMotociclisme()){
-            puntuacio += 3;
-            isEscuderiaF1(titular);
+            this.puntuacio += 3;
+            this.preu += 100;
+            isEscuderiaMoto(titular);
         } else if(isBasquet()){
             puntuacio += 4;
             isEurolliga(titular);
             isACB(titular);
-            isBarçaMadrid(titular);
+            isBarçaMadrid(titular, Esports.basquet);
         }
     }
 
@@ -73,11 +88,17 @@ public class Noticia {
     }
 
     private void isTorresBenzema(String titular){
-        if(titular.contains("Benzema") || titular.contains("Ferran Torres")) this.puntuacio += 1;
+        if(titular.contains("Benzema") || titular.contains("Ferran Torres")){
+            this.puntuacio += 1;
+            this.preu += 50;
+        }
     }
 
     private void isCampions(String titular){
-        if(titular.contains("Eurolliga")) this.puntuacio += 3;
+        if(titular.contains("Lliga de Campions")) {
+            this.puntuacio += 3;
+            this.preu += 100;
+        }
     }
     private void isEurolliga(String titular){
         if(titular.contains("Eurolliga")) this.puntuacio += 3;
@@ -85,20 +106,35 @@ public class Noticia {
     private void isACB(String titular){
         if(titular.contains("ACB")) this.puntuacio += 2;
     }
-    private void isBarçaMadrid(String titular){
-        if(titular.contains("Barça") || titular.contains("Madrid")) this.puntuacio += 1;
+    private void isBarçaMadrid(String titular, Esports esport){
+        if((titular.contains("Barça") || titular.contains("Madrid")) && esport.equals(Esports.futbol)) {
+            this.puntuacio += 1;
+            this.preu += 100;
+        } else if((titular.contains("Barça") || titular.contains("Madrid")) && esport.equals(Esports.basquet)){
+            this.puntuacio += 1;
+            this.preu += 75;
+        }
     }
 
     private void isEscuderiaF1(String titular){
-        if(titular.contains("Mercedes") ||(titular.contains("Ferrari"))) this.puntuacio += 3;
+        if(titular.contains("Mercedes") ||(titular.contains("Ferrari"))){
+            this.puntuacio += 3;
+            this.preu += 50;
+        }
     }
 
     private void isEscuderiaMoto(String titular){
-        if(titular.contains("Honda") ||(titular.contains("Yamaha"))) this.puntuacio += 3;
+        if(titular.contains("Honda") ||(titular.contains("Yamaha"))){
+            this.puntuacio += 3;
+            this.preu += 50;
+        }
     }
 
     private void isTenistas(String titular){
-       if(titular.contains("Nadal") ||(titular.contains("Djokkovic")) ||(titular.contains("Federer")))this.puntuacio += 3;
+       if(titular.contains("Nadal") ||(titular.contains("Djokkovic")) ||(titular.contains("Federer"))){
+           this.puntuacio += 3;
+           this.preu += 100;
+       }
     }
 
     public boolean isTenis(){

@@ -124,7 +124,19 @@ public class Redaccio {
         if(!redactors.isEmpty()) {
             Redactor redactor = getRedactor(dni);
             noticia = redactor.getNoticia(titular);
-            noticia.getPunts(titular);
+            Integer punts = noticia.getPunts(titular);
+            System.out.println("Els punts de la noticia son: " + punts);
+        }else System.out.println("Error - No hay redactors!");
+    }
+
+    public void calcularPreuNoticia(){
+        String dni = demanarDni();
+        String titular = demanarTitular(); Noticia noticia;
+
+        if(!redactors.isEmpty()) {
+            Redactor redactor = getRedactor(dni);
+            noticia = redactor.getNoticia(titular);
+            System.out.println("Els punts de la noticia son: " + noticia.getPreu(titular));
         }else System.out.println("Error - No hay redactors!");
     }
 
