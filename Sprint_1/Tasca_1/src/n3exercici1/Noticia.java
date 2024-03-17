@@ -3,8 +3,6 @@ package n3exercici1;
 public class Noticia {
 
     enum Esports { futbol, basquet, tenis, f1, motociclisme, error };
-
-    enum Competicio { }
     private String titular;
     private String text;
     private int puntuacio;
