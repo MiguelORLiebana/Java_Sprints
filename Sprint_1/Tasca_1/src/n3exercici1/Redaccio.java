@@ -1,6 +1,7 @@
 package n3exercici1;
 
 import java.util.ArrayList;
+import java.util.ConcurrentModificationException;
 import java.util.List;
 import java.util.Scanner;
 
@@ -44,22 +45,41 @@ public class Redaccio {
 
     public void deleteRedactor(){
         String auxDni = demanarDni();
-        int aux;
+        List<Redactor> redactorsAux = new ArrayList<>();
+        int index = -1;
+        Boolean existeixDni = false;
 
-        for(Redactor r:redactors){
-            if(r.existeixDni(auxDni)){
-                //r = null;
-                aux = redactors.indexOf(r);
-                redactors.remove(aux);
+        if(redactors.isEmpty()){
+            System.out.println("No hay redactors!!!");
+        }
+        else {
+            try{
+                for(Redactor redactor:redactors){
+                    if(redactor.existeixDni(auxDni)){
+                        existeixDni = true;
+                        index =  redactors.indexOf(redactor);
+                    }
+                }
+
+                if(existeixDni && index >= 0) {
+                    redactors.remove(index);
+                }
+            } catch(ConcurrentModificationException e){
+                System.out.println("Error con eliminación redactor");
             }
         }
     }
 
     public void mostrarRedactors(){
-        for(Redactor redactor: redactors){
-            System.out.println("Redactor/a amb nom: " + redactor.getName()
-                    + ", i Dni: " + redactor.getDni()
-                    + " amb " + redactor.getNumNoticies() + " notícies");
+        if(redactors.isEmpty()){
+            System.out.println("No hay redactors!!");
+        }
+        else{
+            for(Redactor redactor: redactors){
+                System.out.println("Redactor/a amb nom: " + redactor.getName()
+                        + ", i Dni: " + redactor.getDni()
+                        + " amb " + redactor.getNumNoticies() + " notícies");
+            }
         }
     }
 
@@ -90,10 +110,23 @@ public class Redaccio {
     public void eliminarNoticiaRedactor(){
         String dni = demanarDni();
         String titular = demanarTitular();
+        Boolean eliminar = false;
+        Integer index = -1;
 
-        for(Redactor redactor:redactors){
-            if(redactor.existeixDni(dni) && redactor.existeixNoticia(titular))redactor.eliminarNoticia(titular);
-        }
+        if(!redactors.isEmpty()){
+            for(Redactor redactor:redactors){
+                if(redactor.existeixDni(dni) && redactor.existeixNoticia(titular)) {
+                    eliminar = true;
+                    index = redactors.indexOf(redactor);
+                }
+            }
+
+            if(eliminar && index >= 0){
+                Redactor redactorElimNot = redactors.get(index);
+                redactorElimNot.eliminarNoticia(titular);
+            } else System.out.println("No existe la noticia con titular: " + titular);
+        } else System.out.println("No hay redactors");
+
     }
 
      private String demanarTitular(){

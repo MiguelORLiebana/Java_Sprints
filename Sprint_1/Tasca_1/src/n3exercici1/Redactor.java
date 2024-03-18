@@ -78,12 +78,23 @@ public class Redactor {
     }
 
     public void eliminarNoticia(String titular){
-        String aux;
-        for(Noticia noticia: noticias){
-            if(noticia.getTitular().equals(titular)){
-                noticias.remove(noticia);
+
+        Integer index = -1;
+        Boolean eliminar = false;
+        Noticia noticiaBorrar = new Noticia("");
+
+        if(!noticias.isEmpty()){
+            for(Noticia noticia: noticias){
+                if(noticia.getTitular().equals(titular)){
+                    eliminar = true;
+                    index = noticias.indexOf(noticia);
+                }
             }
-        }
+            if(eliminar && index >= 0){
+                noticiaBorrar = noticias.get(index);
+                noticias.remove(noticiaBorrar);
+            }
+        }else System.out.println("No hay noticias!");
     }
 
     public void afegirNoticia(Noticia noticia){
