@@ -19,9 +19,9 @@ public class Redactor {
         IdNext++;
     }
 
-    public void incrementSou(int increment){
-        this.sou += increment;
-    }
+//    public void incrementSou(int increment){
+//        this.sou += increment;
+//    }
 
     public boolean existeixDni(String dni){
         if(this.dni.equals(dni)) {

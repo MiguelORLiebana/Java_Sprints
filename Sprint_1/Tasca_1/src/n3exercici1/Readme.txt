@@ -29,6 +29,18 @@ Ejemplo_3: basquet
 
 4.
 Introduce dni redactor (3 números y sin letra)
-Introduce titular noticia (futbol Benzema juga Lliga de Campions)
+Introduce titular noticia (ejemplo -> futbol Benzema juga Lliga de Campions)
 
 5.
+Introduce dni redactor (3 número y sin letra)
+Introduce titular noticia a eliminar
+
+6.
+Introduce dni
+Introduce titular
+
+7.
+Introduce dni
+Introduce titular
+
+8.

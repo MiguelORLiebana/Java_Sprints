@@ -164,7 +164,8 @@ public class Redaccio {
 
     public void calcularPreuNoticia(){
         String dni = demanarDni();
-        String titular = demanarTitular(); Noticia noticia;
+        String titular = demanarTitular();
+        Noticia noticia;
 
         if(!redactors.isEmpty()) {
             Redactor redactor = getRedactor(dni);
