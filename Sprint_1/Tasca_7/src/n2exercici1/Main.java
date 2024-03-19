@@ -11,6 +11,7 @@ public class Main {
         String Path = System.getProperty("user.dir")+File.separator+"Tasca_7"+File.separator+"src"+File.separator+"n2exercici1"+File.separator;
 
         Car car = new Car("coche");
+
         JsonSerializable a = car.getClass().getAnnotation(JsonSerializable.class);
         String directory = a.file();
         String PathDirectory = Path + directory;
@@ -18,7 +19,7 @@ public class Main {
         try(Writer writer = new FileWriter(PathDirectory)){
             //Object to JSON
             Gson gson = new Gson();
-            gson.toJson(new Car("coche"), writer);
+            gson.toJson(car, writer);
         }catch(IOException e){
             System.out.println("Error with the .json file");
         }
