@@ -8,12 +8,27 @@ public class Entrada {
     static Scanner scanner = new Scanner(System.in);
     public void executar() throws InterruptedException {
         Byte valorByte = llegirByte("Introdueix la teva edat: ");
+        System.out.println("El valor del byte és: " + valorByte);
+
         Integer valorInteger = llegirInt("Introdueix una xifra de tipus Integer");
+        System.out.println("El valor de l´Integer és: " + valorInteger);
+
         Float valorDecimal = llegirFloat("Introdueix un nombre decimal: ");
+        System.out.println("El valor decimal és: " + valorDecimal);
+
         Double valorDouble = llegirDouble("Introdueix un nombre double: ");
+        System.out.println("El valor double és: " + valorDouble);
+
         char valorChar = llegirChar("Introdueix un char: ");
+        System.out.println("El valor char és: " + valorChar);
+
+        //TODO: problem with llegirString and llegirSiNO
+
         String valorString = llegirString("Introdueix una paraula o text: ");
+        System.out.println("El valor String és: " + valorString);
+
         Boolean valorBoolean = llegirSiNo("Introdueix s o n: ");
+        System.out.println("El valor Boolean és: " + valorBoolean);
     }
 
     //*************** InputMismatchException ********************
