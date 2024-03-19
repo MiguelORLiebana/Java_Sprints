@@ -1,5 +1,6 @@
 package n2exercici1;
 
+@JsonSerializable(file = "Object.json")
 public class Car {
     private String car;
 
