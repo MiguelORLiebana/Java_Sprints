@@ -16,30 +16,41 @@ public class Main {
 //        llista.add("coche");
 //        llista.add(10);
 
-        List<String> llistaStrings;
+        List<String> llistaStrings1;
+        List<String> llistaStrings2;
         List<String> llistaOrd;
 
-        //PREGUNTA: No puedo introducir .sorted(Comparator.comparing(String::length))
-        llistaStrings = (List<String>) (Object)llista
+        System.out.println("******* Llista Inicial *******");
+        System.out.println(llista);
+
+        //Opción 1 - ***********************************************************************
+        llistaStrings1 = llista
+                .stream()
+                //.filter(a -> String.valueOf(a.getClass()).equals(("class java.lang.String")))
+                .filter(a -> a instanceof String)
+                .map(String.class::cast)
+                .sorted(Comparator.comparing(String::length))
+                .toList();
+        System.out.println("******* Opción 1 - Llista Ordenada de Curta a Llarga *******");
+        System.out.println(llistaStrings1);
+
+        //Opción 2  ***********************************************************************
+        llistaStrings2 = (List<String>) (Object)llista
                 .stream()
                 .filter(a -> String.valueOf(a.getClass()).equals(("class java.lang.String")))
                 //.sorted(Comparator.comparing(String::length))
                 .toList();
 
-        System.out.println("******* Llista Inicial *******");
-        System.out.println(llista);
-
-        System.out.println("******* Llista Sin números *******");
+        System.out.println("******* Opción 2 - Llista Sin números *******");
 
 //        System.out.println(String.valueOf(llistaStrings.getFirst().getClass()));
 //        System.out.println(String.valueOf(llista.getClass()));
 
+        System.out.println(llistaStrings2.toString());
 
-        System.out.println(llistaStrings.toString());
+        System.out.println("******* Opción 2 - Llista Ordenada de Curta a Llarga *******");
 
-        System.out.println("******* Llista Ordenada *******");
-
-        llistaOrd = llistaStrings
+        llistaOrd = llistaStrings2
                 .stream()
                 .sorted(Comparator.comparing(String::length))
                 .toList();
