@@ -1,7 +1,5 @@
 package n2exercici1;
 
-import java.util.InputMismatchException;
-import java.util.Scanner;
 
 public class Main {
 

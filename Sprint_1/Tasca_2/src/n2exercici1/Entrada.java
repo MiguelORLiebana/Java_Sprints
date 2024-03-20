@@ -22,8 +22,6 @@ public class Entrada {
         char valorChar = llegirChar("Introdueix un char: ");
         System.out.println("El valor char és: " + valorChar);
 
-        //TODO: problem with llegirString and llegirSiNO
-
         String valorString = llegirString("Introdueix una paraula o text: ");
         System.out.println("El valor String és: " + valorString);
 
@@ -108,14 +106,19 @@ public class Entrada {
 
     public static char llegirChar(String missatge) {
         Boolean notOk = false;
-        char nextChar;
 
         while(!notOk){
             System.out.println(missatge);
             try{
-                nextChar = scanner.next().charAt(0);
-                notOk = true;
-                return nextChar;
+                String a = scanner.next();
+
+                if(a.length() == 1 && (a.matches("[a-z]+") || a.matches("[A-Z]+"))){
+                    notOk = true;
+                    return a.charAt(0);
+                }
+                else{
+                    throw new Exception("Error, introduce un char");
+                }
             } catch(Exception e){
                 System.out.println("Error: No és correcte, NO és un char!");
                 scanner.nextLine();      // Limpieza de buffer -> https://es.stackoverflow.com/questions/357304/bucle-infinito-con-scanner-de-java
@@ -126,7 +129,8 @@ public class Entrada {
 
     public static String llegirString(String missatge) {
         Boolean notOk = false;
-        String nextString;
+        String nextString ="";
+        nextString = scanner.nextLine();
 
         while(!notOk){
             System.out.println(missatge);
@@ -144,12 +148,11 @@ public class Entrada {
 
     public static boolean llegirSiNo(String missatge){
         Boolean notOk = false;
-        String nextLine;
 
         while(!notOk){
             System.out.println(missatge);
             try{
-                nextLine = scanner.nextLine();
+                String nextLine = scanner.nextLine();
 
                 if(nextLine.equals("s") || nextLine.equals("n")) {
                     notOk = true;
