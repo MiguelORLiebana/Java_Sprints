@@ -2,6 +2,7 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
+      <module fileurl="file://$PROJECT_DIR$/Kata/Kata.iml" filepath="$PROJECT_DIR$/Kata/Kata.iml" />
       <module fileurl="file://$PROJECT_DIR$/Sprint_1.iml" filepath="$PROJECT_DIR$/Sprint_1.iml" />
       <module fileurl="file://$PROJECT_DIR$/Tasca_1/Tasca_1.iml" filepath="$PROJECT_DIR$/Tasca_1/Tasca_1.iml" />
       <module fileurl="file://$PROJECT_DIR$/Tasca_2/Tasca_2.iml" filepath="$PROJECT_DIR$/Tasca_2/Tasca_2.iml" />
