@@ -154,10 +154,14 @@ public class Entrada {
             try{
                 String nextLine = scanner.nextLine();
 
-                if(nextLine.equals("s") || nextLine.equals("n")) {
+                if(nextLine.equals("s")) {
                     notOk = true;
                     return true;
+                }else if (nextLine.equals("n")){
+                    notOk = false;
+                    return false;
                 }
+
             } catch(Exception e){
                 System.out.println("Error: No és correcte, NO és un char!");
                 scanner.nextLine();      // Limpieza de buffer -> https://es.stackoverflow.com/questions/357304/bucle-infinito-con-scanner-de-java
