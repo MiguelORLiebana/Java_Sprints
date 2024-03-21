@@ -1,6 +1,7 @@
 package n1exercici1;
 
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.LinkedHashSet;
 import java.util.List;
 
@@ -20,19 +21,8 @@ public class Main {
         Month novembre = new Month("novembre");
         Month desembre = new Month("desembre");
 
-        List<Month> months = new ArrayList<Month>();
-
-        months.add(gener);
-        months.add(febrer);
-        months.add(març);
-        months.add(abril);
-        months.add(maig);
-        months.add(juny);
-        months.add(juliol);
-        months.add(setembre);
-        months.add(octubre);
-        months.add(novembre);
-        months.add(desembre);
+        Month[] monthArray = new Month[] {gener, febrer, març, abril, maig, juny, juliol, setembre, octubre, novembre, desembre};
+        ArrayList<Month> months = new ArrayList<>(Arrays.asList(monthArray));
 
         System.out.println("**************** FOR ******************");
         mostrarOrdreMonthsFor(months);
