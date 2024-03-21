@@ -10,8 +10,8 @@ public class Main {
         Llista directoris = new Llista();
 
         try{
-            //directoris.llistarContingutDiretoriesAndFolders(directory);
-            directoris.llistarContingutDirectoris(directory);
+            directoris.llistarContingutDiretoriesAndFolders(directory);
+            //directoris.llistarContingutDirectoris(directory);
         } catch(ArrayIndexOutOfBoundsException e){
             System.out.printf(e.getMessage());
         }

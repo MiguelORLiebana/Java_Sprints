@@ -8,6 +8,8 @@ import java.nio.file.Paths;
 import java.nio.file.attribute.BasicFileAttributeView;
 import java.nio.file.attribute.BasicFileAttributes;
 import java.nio.file.attribute.FileTime;
+import java.text.DateFormat;
+import java.text.SimpleDateFormat;
 import java.util.Arrays;
 
 public class Llista {
@@ -76,18 +78,19 @@ public class Llista {
     private void showInfo(File file, BasicFileAttributes attr, Path path, String tipus){
         System.out.println(tipus + " - " +
                             formatDate(attr) +
-
-
-                "Path: " + file.getAbsolutePath() +
-                ", Name: " + file.getName() +
-                tipus +
-                " Data de modificacion: " + attr.lastModifiedTime());
+                            " Path: " + file.getAbsolutePath());
     }
 
     private String formatDate(BasicFileAttributes time){
-        //TODO
-        time.lastModifiedTime();
+        try{
+            FileTime date = time.lastModifiedTime();
+            DateFormat df = new SimpleDateFormat("MM/dd/yyyy");
+            String dateCreated = df.format(date.toMillis());
 
-        return "darrere modificació: " + ;
+            return "darrere modificació: " + dateCreated + " - ";
+        } catch(IllegalArgumentException e){
+            System.out.println("Error date format!");
+        }
+        return "Error";
     }
 }
