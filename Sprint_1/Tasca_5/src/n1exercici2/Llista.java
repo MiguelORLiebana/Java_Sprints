@@ -7,6 +7,7 @@ import java.nio.file.Path;
 import java.nio.file.Paths;
 import java.nio.file.attribute.BasicFileAttributeView;
 import java.nio.file.attribute.BasicFileAttributes;
+import java.nio.file.attribute.FileTime;
 import java.util.Arrays;
 
 public class Llista {
@@ -46,19 +47,19 @@ public class Llista {
     public void llistarContingutDirectoris(String directory) {
 
         File file = new File(directory);
-        String[] aux = file.list();
+        File [] aux = file.listFiles();
 
         System.out.println("************* Llista per ordre alfabètic ***********");
         Arrays.sort(aux);
 
-        for(String a: aux){
+        for(File a: aux){
 
             Path path = Paths.get(directory);
 
             try{
                 BasicFileAttributes attr = Files.getFileAttributeView(path, BasicFileAttributeView.class).readAttributes();
                 String tipus = IsDirectoryOrFile(attr);
-                //showInfo(a, attr, path, tipus);
+                showInfo(a, attr, path, tipus);
 
             } catch(IOException e){
                 System.out.println("---- Error atributs del directori -----");
@@ -73,9 +74,20 @@ public class Llista {
     }
 
     private void showInfo(File file, BasicFileAttributes attr, Path path, String tipus){
-        System.out.println("Path: " + file.getAbsolutePath() +
+        System.out.println(tipus + " - " +
+                            formatDate(attr) +
+
+
+                "Path: " + file.getAbsolutePath() +
                 ", Name: " + file.getName() +
                 tipus +
                 " Data de modificacion: " + attr.lastModifiedTime());
+    }
+
+    private String formatDate(BasicFileAttributes time){
+        //TODO
+        time.lastModifiedTime();
+
+        return "darrere modificació: " + ;
     }
 }
