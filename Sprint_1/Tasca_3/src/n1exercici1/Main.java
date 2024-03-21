@@ -24,17 +24,17 @@ public class Main {
         Month[] monthArray = new Month[] {gener, febrer, març, abril, maig, juny, juliol, setembre, octubre, novembre, desembre};
         ArrayList<Month> months = new ArrayList<>(Arrays.asList(monthArray));
 
-        System.out.println("**************** FOR ******************");
+        System.out.println("**************** FOR **********************");
         mostrarOrdreMonthsFor(months);
 
-        System.out.println("*********** ITERATOR *******************");
+        System.out.println("************** ITERATOR *******************");
         mostrarOrdreMonthsIterador(months);
 
-        System.out.println("************* AGOST ADDED ***********************");
+        System.out.println("************* AGOST ADDED ******************");
         months.add(7,agost);
         mostrarOrdreMonthsFor(months);
 
-        System.out.println("********** CONVERT TO HASHSET ***********");
+        System.out.println("*********** CONVERT TO HASHSET **************");
         LinkedHashSet<Month> monthsLinkedHashset = new LinkedHashSet<Month>(months);
 
         mostrarOrdreMonthsHashset(monthsLinkedHashset);
