@@ -2,13 +2,11 @@ package n1exercici2;
 
 public class Cotxe {
     public static final String marca = "Opel";
-    public static String model;
+    public static String model = "X";
     public final int potencia;
 
-    public Cotxe(String model, int potencia){
+    public Cotxe(int potencia){
 
-        //inicialització al constructor dels atributs static i final
-        this.model= model;
         this.potencia = potencia;
     }
 
@@ -18,5 +16,9 @@ public class Cotxe {
 
     public void accelerar(){
         System.out.println("El vehicle està accelerant");
+    }
+
+    public void getInfo(){
+        System.out.println("The brand car is: " + this.marca + ", model " + this.model + " and " + this.potencia + " hp");
     }
 }
