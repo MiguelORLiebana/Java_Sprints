@@ -20,6 +20,8 @@ public class Percussio extends Instrument {
     public static void static_method_Percussio(){
         System.out.println("Percussio static method");
     }
+
+    @Override
     public void tocar(){
         System.out.println("Està sonant un instrument de percussió");
     }

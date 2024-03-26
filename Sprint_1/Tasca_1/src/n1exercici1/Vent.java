@@ -20,6 +20,8 @@ public class Vent extends Instrument {
     public static void static_method_Vent(){
         System.out.println("Vent static method");
     }
+
+    @Override
     public void tocar(){
         System.out.println("Està sonant un instrument de vent");
     }
