@@ -10,3 +10,6 @@ class SortedRestaurants implements Comparator<Restaurant> {
         return j;
     }
 }
+
+//Notes:
+//https://stackoverflow.com/questions/2839137/how-to-use-comparator-in-java-to-sort
